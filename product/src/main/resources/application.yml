@@ -1,6 +1,7 @@
 server:
   port: 9991
   
+  
 spring:
   h2:
     console:
@@ -17,7 +18,16 @@ spring:
       dbcp2:
       ddl-auto: update  
       show-sql: true  
-      hibernate.generate_statistics: true  
-
-    
+      hibernate.generate_statistics: true 
+      application:
+      name: product-microservice  
+   
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:1111/eureka
+  instance:
+    hostname: localhost 
    
